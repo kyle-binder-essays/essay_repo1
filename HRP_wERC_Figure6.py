@@ -25,10 +25,9 @@ figure6 = pd.DataFrame(columns=list(range(0,101,10)), data=None, \
                                       'HRP_A', 'HRP_B', 'HRP_C', 'HRP_D', 'HRP_E', \
                                       ])
 for iterator in figure6.columns:
-    print(iterator)
+
     # Ugh, don't need to specify float in Python 3+:
     epsilon = float(iterator) / float(100)
-    print(epsilon)
 
     # Define columns {A,B,C,D,E}:
     x_A = pd.DataFrame(index=x_all.index, data=x_all.iloc[:, 2].values, columns=['x_A'])
