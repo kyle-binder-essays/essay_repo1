@@ -9,7 +9,7 @@ import calendar
 import etf_umd as sumd # sumd = "spliced umd"
 import etf_backtest_stats as bt
 import etf_umd_cliff_fall_charts as cliff
-
+import os
 
 def define_input_parameters():
     
@@ -19,9 +19,10 @@ def define_input_parameters():
     ##############################################
     # LOAD AS DATAFRAME FROM CSV:
     ##############################################
-#    csv_daily = r'C:\Users\Kyle\Desktop\_FOLDERS_\__DATASETS\Fama French CSVs\12_Industry_Portfolios_Daily.CSV'
-    csv_monthly = r'C:\Users\Kyle\Desktop\Dsktp Folders\Materials for Essay 3\Play Area - Sept 2021 - Percent Per Leg\ETFs_spliced_1975.CSV'
-    df_monthly = pd.read_csv(csv_monthly,skiprows=1,nrows=553-1,index_col=0)
+        
+    cwd = os.getcwd()
+    csv_monthly = cwd + str('\Data\ETFs\ETFs_spliced_1975.CSV')
+    df_monthly = pd.read_csv(csv_monthly,skiprows=1,nrows=562-2,index_col=0)
   
     # Date conversion from "YYYYMM" to an actual date:
     dates_fama_m = df_monthly.index
