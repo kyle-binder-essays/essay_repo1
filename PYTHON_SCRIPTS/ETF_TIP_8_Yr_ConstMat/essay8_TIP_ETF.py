@@ -25,14 +25,14 @@ def define_input_parameters():
     # df_daily = pd.read_csv(csv_daily,skiprows=0,nrows=14925-1,index_col=0)
     # print('FINISHED loading FRED daily nominals')
 
-    print('loading FRED monthly nominals')
-    csv_monthly = cwd + str('\DATA\FRED_Monthly_Yields\monthly_yields_2003.CSV')
+    print('loading FRED monthly real yields')
+    csv_monthly = cwd + str('\monthly_yields_2003_for_TIP.CSV')
     df_monthly = pd.read_csv(csv_monthly,skiprows=0,nrows=685-1,index_col=0)
-    print('FINISHED loading FRED monthly nominals')
+    print('FINISHED loading FRED monthly real yields')
 
     # Maturity (years) of the time series of yields to be loaded:
     shorter_mat_yrs = 7
-    longer_mat_yrs  = 10
+    longer_mat_yrs  = 8
     
     return df_monthly, shorter_mat_yrs, longer_mat_yrs
        
@@ -283,7 +283,7 @@ def main():
             price_carry_return_m, coupon_return_m, total_return_m, \
             price_sold_at_m
             
-# Desired output variable used in Essay #4 is "returns_daily":
+# Desired output variable used in Essay #8 is "price_carry_return_m":
 yields_monthly, interp_yields_monthly, \
 returns_monthly, \
 price_carry_return_m, coupon_return_m, total_return_m, \
