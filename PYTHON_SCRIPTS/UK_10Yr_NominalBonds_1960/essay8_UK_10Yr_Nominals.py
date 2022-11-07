@@ -18,13 +18,13 @@ def define_input_parameters():
     cwd = os.getcwd()
 
     print('loading monthly nominal yields')
-    csv_monthly = cwd + str('\monthly_yields_1921_for_USA_5Yr_Nominals.CSV')
+    csv_monthly = cwd + str('\monthly_yields_1960_for_UK_10Yr_Nominals.CSV')
     df_monthly = pd.read_csv(csv_monthly,skiprows=0,nrows=2685-1,index_col=0)
     print('FINISHED loading monthly nominal yields')
 
     # Maturity (years) of the time series of yields to be loaded:
     shorter_mat_yrs = 5
-    longer_mat_yrs  = 5.25
+    longer_mat_yrs  = 10
     
     return df_monthly, shorter_mat_yrs, longer_mat_yrs
        
